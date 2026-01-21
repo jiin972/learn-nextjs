@@ -1,0 +1,18 @@
+#의존성
+/node_modules/
+
+#빌드 결과물
+.next/
+out/
+
+#환경변수
+.env
+.env.local
+.env*.local
+npm-debug.log
+
+#에디터설정
+.vscode/
+
+#로그
+*.log
