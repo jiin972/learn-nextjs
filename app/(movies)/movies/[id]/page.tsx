@@ -1,9 +1,9 @@
 import { getMovies } from "@/app/(home)/page";
-import MovieCredits from "@/components/movie-credits";
 import MovieInfo from "@/components/movie-info";
 import MovieVideos from "@/components/movie-videos";
 import Link from "next/link";
 import { Suspense } from "react";
+import styles from "../../../styles/movie-detail.module.css";
 
 export interface IParams {
   params: Promise<{ id: string }>;
@@ -28,13 +28,20 @@ export default async function MovieDetailPage({ params }: IParams) {
       <Suspense fallback={<h1>Loading Movie videos</h1>}>
         <MovieVideos id={id} />
       </Suspense>
-      <Suspense fallback={<h1>Loading Movie credis</h1>}>
-        <Link href={`/movies/${id}/credits`}>크래딧 보러가기</Link>
-      </Suspense>
-      {}
-      <Suspense fallback={<h1>Loading Movie Providers</h1>}>
-        <Link href={`/movies/${id}/ott-service`}>어디서 볼 수 있나요?</Link>
-      </Suspense>
+      <div className={styles.wrapper}>
+        <h3 className={styles.title}>추가 정보</h3>
+        <div className={styles.linkContainer}>
+          <Link className={styles.linkButton} href={`/movies/${id}/credits`}>
+            🎬️ 출연진 보러가기
+          </Link>
+          <Link
+            className={styles.linkButton}
+            href={`/movies/${id}/ott-service`}
+          >
+            📺️ OTT정보 확인
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

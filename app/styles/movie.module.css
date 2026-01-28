@@ -8,7 +8,8 @@
 
 .movie img {
   max-width: 100%;
-  min-height: 100%;
+  aspect-ratio: 2/3; /*영화포스터비율유지*/
+  object-fit: cover; /*비율을 지키면서 채움*/
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
 }

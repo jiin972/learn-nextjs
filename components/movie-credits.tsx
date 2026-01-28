@@ -16,24 +16,59 @@ async function getCredits(id: string) {
 export default async function MovieCredits({ id }: { id: string }) {
   const movie = await getMovies(id);
   const movieCredit = await getCredits(id);
+  const directors = movieCredit.filter(
+    (person) =>
+      person.known_for_department === "Directing" ||
+      person.job === "Director" ||
+      person.department === "Directing",
+  );
+
   return (
-    <div className={styles.container}>
-      <img
-        src={movie.poster_path}
-        alt="movie poster"
-        className={styles.poster}
-      />
-      <div className={styles.info}>
-        <h1 className={styles.title}>
-          {movieCredit.slice(0, 10).map((person) => (
-            <div key={person.id}>
-              <img src={person.profile_path} alt="" />
-            </div>
+    <div className={styles.wrapper}>
+      <div className={styles.infoContainer}>
+        <h1 className={styles.title}>{movie.title}</h1>
+        {directors.length > 0 && (
+          <div className={styles.directorContainer}>
+            <h3 className={styles.profileJobName}>감독</h3>
+            <h3 className={styles.profileDireName}>{directors[0].name}</h3>
+          </div>
+        )}
+
+        <div className={styles.genresContainer}>
+          {movie.genres?.map((genres) => (
+            <li key={genres.id}>#{genres.name}</li>
           ))}
-        </h1>
-        <a href={movie.homepage} target={"_blank"}>
-          HomePage &rarr;
-        </a>
+        </div>
+      </div>
+      <h3 className={styles.subtitle}>출연진</h3>
+      <div className={styles.personContainer}>
+        {movieCredit.slice(0, 10).map((person) => (
+          <div key={person.id}>
+            <img
+              className={styles.profile}
+              src={person.profile_path}
+              alt={person.name}
+            />
+            <div className={styles.profileName}>{person.name}</div>
+            <div className={styles.profileSubName}>{person.character}</div>
+          </div>
+        ))}
+        {/* {directors.length > 0 &&
+          directors.map((dir) => (
+            <div key={dir.id}>
+              {dir.profile_path ? (
+                <img
+                  className={styles.profile}
+                  src={dir.profile_path}
+                  alt={dir.name}
+                />
+              ) : (
+                <div className={styles.noImage}>{dir.name[0]}</div>
+              )}
+              <div className={styles.profileName}>{dir.name}</div>
+              <div className={styles.profileSubName}>감독</div>
+            </div>
+          ))} */}
       </div>
     </div>
   );

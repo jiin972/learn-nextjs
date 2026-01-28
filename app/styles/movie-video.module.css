@@ -1,15 +1,35 @@
+.warpper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.title {
+  width: 90%;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: left;
+  padding-bottom: 20px;
+}
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 100px;
   padding-bottom: 100px;
+  justify-content: center;
 }
 
 .container iframe {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16/9; /*화면비율설정*/
   border-radius: 10px;
+  border: none;
   opacity: 0.8;
   transition: opacity 0.2s ease-in-out;
 }

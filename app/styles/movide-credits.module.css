@@ -1,26 +1,103 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+.wrapper {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoContainer {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  align-items: baseline; /*장르,제목 하단정렬*/
   gap: 50px;
+  padding-bottom: 30px;
+}
+
+.title {
+  text-align: left;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.directorContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.profileDireName {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.profileJobName {
+  font-size: 12px;
+}
+
+.genresContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.genresContainer li {
+  list-style: none;
+}
+
+.subtitle {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  width: 80%;
+  text-align: left;
+  font-size: 25px;
+}
+
+.personContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px 40px;
   width: 80%;
   margin: 0 auto;
 }
 
-.poster {
+.profile {
   border-radius: 20px;
-  max-width: 70%;
+  object-fit: cover;
+  aspect-ratio: 2/3;
   place-self: center;
 }
 
-.title {
+.profileName {
+  margin-top: 15px;
+  font-size: 25px;
+  font-weight: bold;
   color: white;
-  font-size: 36px;
-  font-weight: 600;
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  gap: 20px;
+.profileSubName {
+  margin-top: 10px;
+  font-size: 12px;
+  padding-bottom: 20px;
 }
+
+/* .noImage {
+  aspect-ratio: 2/3;
+  border-radius: 20px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  width: 150px;
+  min-height: 250px;
+  background-image: linear-gradient(to top, #ff9a9e, #fecfef);
+} */

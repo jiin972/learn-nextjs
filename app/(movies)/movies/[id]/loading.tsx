@@ -1,3 +1,3 @@
 export default function LoadingDetail() {
-  return <h2>Loading...movie:id</h2>;
+  return <h2>Loading...Movie details</h2>;
 }
