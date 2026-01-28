@@ -20,7 +20,7 @@ ENV NODE_ENV production
 #핵심. standalone추출
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+#COPY --from=builder /app/public ./public
 
 #포트설정
 EXPOSE 8282
