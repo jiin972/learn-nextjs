@@ -67,6 +67,7 @@
 }
 
 .profile {
+  width: 100%;
   border-radius: 20px;
   object-fit: cover;
   aspect-ratio: 2/3;
@@ -84,6 +85,14 @@
   margin-top: 10px;
   font-size: 12px;
   padding-bottom: 20px;
+}
+
+.btnContainer {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
 }
 
 /* .noImage {

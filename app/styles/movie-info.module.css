@@ -4,11 +4,16 @@
   gap: 50px;
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .poster {
+  width: 100%;
+  max-width: 400px;
   border-radius: 20px;
-  max-width: 70%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   place-self: center;
 }
 

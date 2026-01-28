@@ -1,0 +1,66 @@
+.bigWrapper {
+  width: 100%;
+}
+
+.btnContainer {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 100px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-size: 1rem;
+  padding-bottom: 20px;
+}
+
+.poster {
+  width: 22rem;
+  object-fit: cover;
+  aspect-ratio: 2/3;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.providerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.iconImg {
+  width: 6rem;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+.providerName {
+  font-size: 1rem;
+  text-align: left;
+  padding-bottom: 20px;
+}

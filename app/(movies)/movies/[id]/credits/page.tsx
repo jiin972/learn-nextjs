@@ -1,6 +1,7 @@
 import { getMovies } from "@/app/(home)/page";
 import MovieCredits from "@/components/movie-credits";
 import { IParams } from "../page";
+import BackButton from "@/components/backButton";
 
 export async function generateMetadata({ params }: IParams) {
   const { id } = await params;

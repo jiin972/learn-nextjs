@@ -1,5 +1,6 @@
 import { API_URL } from "@/app/(home)/page";
 import styles from "../app/styles/movide-credits.module.css";
+import BackButton from "./backButton";
 
 async function getMovies(id: string) {
   const response = await fetch(`${API_URL}/${id}`, {
@@ -25,6 +26,9 @@ export default async function MovieCredits({ id }: { id: string }) {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.btnContainer}>
+        <BackButton />
+      </div>
       <div className={styles.infoContainer}>
         <h1 className={styles.title}>{movie.title}</h1>
         {directors.length > 0 && (
@@ -53,22 +57,6 @@ export default async function MovieCredits({ id }: { id: string }) {
             <div className={styles.profileSubName}>{person.character}</div>
           </div>
         ))}
-        {/* {directors.length > 0 &&
-          directors.map((dir) => (
-            <div key={dir.id}>
-              {dir.profile_path ? (
-                <img
-                  className={styles.profile}
-                  src={dir.profile_path}
-                  alt={dir.name}
-                />
-              ) : (
-                <div className={styles.noImage}>{dir.name[0]}</div>
-              )}
-              <div className={styles.profileName}>{dir.name}</div>
-              <div className={styles.profileSubName}>감독</div>
-            </div>
-          ))} */}
       </div>
     </div>
   );
